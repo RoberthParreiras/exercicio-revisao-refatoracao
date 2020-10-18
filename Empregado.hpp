@@ -4,25 +4,27 @@
 #include <iostream>
 #include <string>
 
-class Empregado {
-	
-  public:
-    double salarioHora;  
-    double quotaMensalVendas;  
+namespace Empregado {
 
+class InformacaoEmpregado {
 
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
-    }
-	
+public:
+    double pagarMes(double horasTrabalhadas); 
+    double pagarHoraExtra(double horasTrabalhadas);
+    void setSalarioHora(double sal);
+    double getSalarioHora();
+    void setQuotaMensalVendas(double quota);
+    double getQuotaMensalVendas();
+
+protected:    
+    double salarioHora;
+    double quotaMensalVendas;
 };
+
+}
+
+
+
+
 
 #endif
